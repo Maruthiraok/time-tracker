@@ -10,11 +10,25 @@
                 git 'https://github.com/Maruthiraok/maven-web-application.git'
             }
         }
-        stage('Maven clean'){
-            steps{
-               sh "mvn clean Install"
-            }
-        }
+        stage('RunUnitTestcases&Build'){
+  steps{
+  parallel(
+   RunUnitTestCases: {
+   sh "mvn test"
+   },
+   
+   Build: {
+   sh "mvn clean package"
+   }
+  
+  )
+  }
+  }
+  #      stage('Maven clean'){
+  #          steps{
+  #            sh "mvn clean Install"
+  #         }
+  #      }
         stage('Build Sucess'){
             steps{
                echo "Build sucessfull"
