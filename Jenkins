@@ -8,12 +8,12 @@
         }
         stage('Maven clean'){
             steps{
-               sh 'mvn clean package'
+               sh "mvn clean package"
             }
         }
         stage('Build Sucess'){
             steps{
-               echo 'Build sucessfull'
+               echo "Build sucessfull"
             }
         }
     }
