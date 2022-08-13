@@ -1,9 +1,9 @@
-pipeline{
-    agent any
-    
-    tools{
-        maven "maven3.8.6"
-    }
+ pipeline {
+      agent any
+
+      tools {
+          maven "Maven 3.8.6"    
+      }
     stages{
         stage('git clone'){
             steps{
