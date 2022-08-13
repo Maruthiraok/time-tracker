@@ -24,11 +24,6 @@
   )
   }
   }
-  #      stage('Maven clean'){
-  #          steps{
-  #            sh "mvn clean Install"
-  #         }
-  #      }
         stage('Build Sucess'){
             steps{
                echo "Build sucessfull"
