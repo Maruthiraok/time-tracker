@@ -7,20 +7,7 @@
                 git 'https://github.com/Maruthiraok/maven-web-application.git'
             }
         }
-        stage('RunUnitTestcases&Build'){
-  steps{
-  parallel(
-   RunUnitTestCases: {
-   sh "mvn test"
-   },
-   
-   Build: {
-   sh "mvn clean package"
-   }
-  
-  )
-  }
-  }
+
         stage('Build Sucess'){
             steps{
                echo "Build sucessfull"
