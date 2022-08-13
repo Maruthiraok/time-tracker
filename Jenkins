@@ -1,0 +1,25 @@
+pipeline{
+    agent any
+    
+    tools{
+        maven 'maven 3.8.6'
+    }
+    stages{
+        stage('git clone'){
+            steps{
+                git 'https://github.com/Maruthiraok/maven-web-application.git'
+            }
+        }
+        stage('Maven clean'){
+            steps{
+               sh 'mvn clean package'
+            }
+        }
+        stage('Build Sucess'){
+            steps{
+               echo 'Build sucessfull'
+            }
+        }
+    }
+    
+}
